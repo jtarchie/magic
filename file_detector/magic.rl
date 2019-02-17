@@ -3,6 +3,7 @@ package file_detector
 type Type int
 
 const (
+  //archive
   Epub Type = iota
   Zip
   Tar
@@ -27,6 +28,11 @@ const (
   Rpm
   Elf
   Dcm
+
+  //application
+  Wasm
+
+  //unknown
   Unknown
 )
 
@@ -59,9 +65,11 @@ const (
   elf  = 0x7F 0x45 0x4C 0x46 %{return Elf};
   dcm  = 0x44 0x49 0x43 0x4D %{return Dcm};
 
+  wasm = 0x00 0x61 0x73 0x6D 0x01 0x00 0x00 0x00 %{return Wasm};
 
+  application = wasm;
   archive = epub | zip | tar | rar | gzip | bz2 | seven_zip | pdf | exe | swf | rtf | nes | crx | cab | eot | ps | xz | deb | ar | z | lz | rpm | elf | dcm;
-  main := archive any*;
+  main := (archive | application) any*;
   write data;
 }%%
 

@@ -34,31 +34,41 @@ const (
   //application
   Wasm
 
+  //audio
+  Midi
+  Mp3
+  M4a
+  Ogg
+  Flac
+  Wav
+  Amr
+  Aac
+
   //unknown
   Unknown
 )
 
 
-//line magic.go:43
+//line magic.go:53
 const magic_start int = 1
-const magic_first_final int = 337
+const magic_first_final int = 362
 const magic_error int = 0
 
 const magic_en_main int = 1
 
 
-//line magic.rl:74
+//line magic.rl:95
 
 
 func Detect(data []byte) Type {
   cs, p, pe, eof := 0, 0, len(data), len(data)
 
-//line magic.go:57
+//line magic.go:67
 	{
 	cs = magic_start
 	}
 
-//line magic.go:62
+//line magic.go:72
 	{
 	if p == pe {
 		goto _test_eof
@@ -588,10 +598,10 @@ func Detect(data []byte) Type {
 		goto st_case_260
 	case 261:
 		goto st_case_261
-	case 337:
-		goto st_case_337
-	case 338:
-		goto st_case_338
+	case 362:
+		goto st_case_362
+	case 363:
+		goto st_case_363
 	case 262:
 		goto st_case_262
 	case 263:
@@ -604,56 +614,6 @@ func Detect(data []byte) Type {
 		goto st_case_266
 	case 267:
 		goto st_case_267
-	case 339:
-		goto st_case_339
-	case 340:
-		goto st_case_340
-	case 341:
-		goto st_case_341
-	case 342:
-		goto st_case_342
-	case 343:
-		goto st_case_343
-	case 344:
-		goto st_case_344
-	case 345:
-		goto st_case_345
-	case 346:
-		goto st_case_346
-	case 347:
-		goto st_case_347
-	case 348:
-		goto st_case_348
-	case 349:
-		goto st_case_349
-	case 350:
-		goto st_case_350
-	case 351:
-		goto st_case_351
-	case 352:
-		goto st_case_352
-	case 353:
-		goto st_case_353
-	case 354:
-		goto st_case_354
-	case 355:
-		goto st_case_355
-	case 356:
-		goto st_case_356
-	case 357:
-		goto st_case_357
-	case 358:
-		goto st_case_358
-	case 359:
-		goto st_case_359
-	case 360:
-		goto st_case_360
-	case 361:
-		goto st_case_361
-	case 362:
-		goto st_case_362
-	case 363:
-		goto st_case_363
 	case 364:
 		goto st_case_364
 	case 365:
@@ -1110,12 +1070,6 @@ func Detect(data []byte) Type {
 		goto st_case_590
 	case 591:
 		goto st_case_591
-	case 268:
-		goto st_case_268
-	case 269:
-		goto st_case_269
-	case 270:
-		goto st_case_270
 	case 592:
 		goto st_case_592
 	case 593:
@@ -1132,18 +1086,6 @@ func Detect(data []byte) Type {
 		goto st_case_598
 	case 599:
 		goto st_case_599
-	case 271:
-		goto st_case_271
-	case 272:
-		goto st_case_272
-	case 273:
-		goto st_case_273
-	case 274:
-		goto st_case_274
-	case 275:
-		goto st_case_275
-	case 276:
-		goto st_case_276
 	case 600:
 		goto st_case_600
 	case 601:
@@ -1174,106 +1116,48 @@ func Detect(data []byte) Type {
 		goto st_case_613
 	case 614:
 		goto st_case_614
-	case 277:
-		goto st_case_277
 	case 615:
 		goto st_case_615
-	case 278:
-		goto st_case_278
-	case 279:
-		goto st_case_279
 	case 616:
 		goto st_case_616
-	case 280:
-		goto st_case_280
-	case 281:
-		goto st_case_281
-	case 282:
-		goto st_case_282
-	case 283:
-		goto st_case_283
-	case 284:
-		goto st_case_284
+	case 268:
+		goto st_case_268
+	case 269:
+		goto st_case_269
+	case 270:
+		goto st_case_270
 	case 617:
 		goto st_case_617
-	case 285:
-		goto st_case_285
-	case 286:
-		goto st_case_286
 	case 618:
 		goto st_case_618
-	case 287:
-		goto st_case_287
-	case 288:
-		goto st_case_288
 	case 619:
 		goto st_case_619
-	case 289:
-		goto st_case_289
-	case 290:
-		goto st_case_290
 	case 620:
 		goto st_case_620
-	case 291:
-		goto st_case_291
-	case 292:
-		goto st_case_292
-	case 293:
-		goto st_case_293
 	case 621:
 		goto st_case_621
-	case 294:
-		goto st_case_294
-	case 295:
-		goto st_case_295
-	case 296:
-		goto st_case_296
-	case 297:
-		goto st_case_297
 	case 622:
 		goto st_case_622
-	case 298:
-		goto st_case_298
-	case 299:
-		goto st_case_299
-	case 300:
-		goto st_case_300
-	case 301:
-		goto st_case_301
 	case 623:
 		goto st_case_623
-	case 302:
-		goto st_case_302
-	case 303:
-		goto st_case_303
-	case 304:
-		goto st_case_304
-	case 305:
-		goto st_case_305
 	case 624:
 		goto st_case_624
-	case 306:
-		goto st_case_306
-	case 307:
-		goto st_case_307
-	case 308:
-		goto st_case_308
+	case 271:
+		goto st_case_271
+	case 272:
+		goto st_case_272
+	case 273:
+		goto st_case_273
+	case 274:
+		goto st_case_274
+	case 275:
+		goto st_case_275
+	case 276:
+		goto st_case_276
 	case 625:
 		goto st_case_625
-	case 309:
-		goto st_case_309
-	case 310:
-		goto st_case_310
-	case 311:
-		goto st_case_311
 	case 626:
 		goto st_case_626
-	case 312:
-		goto st_case_312
-	case 313:
-		goto st_case_313
-	case 314:
-		goto st_case_314
 	case 627:
 		goto st_case_627
 	case 628:
@@ -1300,30 +1184,126 @@ func Detect(data []byte) Type {
 		goto st_case_638
 	case 639:
 		goto st_case_639
+	case 277:
+		goto st_case_277
+	case 278:
+		goto st_case_278
+	case 279:
+		goto st_case_279
+	case 280:
+		goto st_case_280
+	case 281:
+		goto st_case_281
+	case 282:
+		goto st_case_282
 	case 640:
 		goto st_case_640
+	case 283:
+		goto st_case_283
+	case 284:
+		goto st_case_284
 	case 641:
 		goto st_case_641
+	case 285:
+		goto st_case_285
+	case 286:
+		goto st_case_286
+	case 287:
+		goto st_case_287
+	case 288:
+		goto st_case_288
+	case 289:
+		goto st_case_289
 	case 642:
 		goto st_case_642
+	case 290:
+		goto st_case_290
+	case 291:
+		goto st_case_291
 	case 643:
 		goto st_case_643
+	case 292:
+		goto st_case_292
+	case 293:
+		goto st_case_293
 	case 644:
 		goto st_case_644
+	case 294:
+		goto st_case_294
+	case 295:
+		goto st_case_295
 	case 645:
 		goto st_case_645
+	case 296:
+		goto st_case_296
+	case 297:
+		goto st_case_297
+	case 298:
+		goto st_case_298
 	case 646:
 		goto st_case_646
+	case 299:
+		goto st_case_299
+	case 300:
+		goto st_case_300
+	case 301:
+		goto st_case_301
+	case 302:
+		goto st_case_302
+	case 303:
+		goto st_case_303
 	case 647:
 		goto st_case_647
+	case 304:
+		goto st_case_304
+	case 305:
+		goto st_case_305
+	case 306:
+		goto st_case_306
+	case 307:
+		goto st_case_307
 	case 648:
 		goto st_case_648
+	case 308:
+		goto st_case_308
+	case 309:
+		goto st_case_309
+	case 310:
+		goto st_case_310
+	case 311:
+		goto st_case_311
 	case 649:
 		goto st_case_649
+	case 312:
+		goto st_case_312
+	case 313:
+		goto st_case_313
+	case 314:
+		goto st_case_314
+	case 315:
+		goto st_case_315
+	case 316:
+		goto st_case_316
+	case 317:
+		goto st_case_317
+	case 318:
+		goto st_case_318
 	case 650:
 		goto st_case_650
+	case 319:
+		goto st_case_319
+	case 320:
+		goto st_case_320
+	case 321:
+		goto st_case_321
 	case 651:
 		goto st_case_651
+	case 322:
+		goto st_case_322
+	case 323:
+		goto st_case_323
+	case 324:
+		goto st_case_324
 	case 652:
 		goto st_case_652
 	case 653:
@@ -1334,48 +1314,70 @@ func Detect(data []byte) Type {
 		goto st_case_655
 	case 656:
 		goto st_case_656
-	case 315:
-		goto st_case_315
-	case 316:
-		goto st_case_316
-	case 317:
-		goto st_case_317
-	case 318:
-		goto st_case_318
-	case 319:
-		goto st_case_319
-	case 320:
-		goto st_case_320
-	case 321:
-		goto st_case_321
 	case 657:
 		goto st_case_657
-	case 322:
-		goto st_case_322
-	case 323:
-		goto st_case_323
-	case 324:
-		goto st_case_324
-	case 325:
-		goto st_case_325
 	case 658:
 		goto st_case_658
+	case 659:
+		goto st_case_659
+	case 660:
+		goto st_case_660
+	case 661:
+		goto st_case_661
+	case 662:
+		goto st_case_662
+	case 663:
+		goto st_case_663
+	case 664:
+		goto st_case_664
+	case 665:
+		goto st_case_665
+	case 666:
+		goto st_case_666
+	case 667:
+		goto st_case_667
+	case 668:
+		goto st_case_668
+	case 669:
+		goto st_case_669
+	case 670:
+		goto st_case_670
+	case 671:
+		goto st_case_671
+	case 672:
+		goto st_case_672
+	case 673:
+		goto st_case_673
+	case 674:
+		goto st_case_674
+	case 675:
+		goto st_case_675
+	case 676:
+		goto st_case_676
+	case 677:
+		goto st_case_677
+	case 678:
+		goto st_case_678
+	case 679:
+		goto st_case_679
+	case 680:
+		goto st_case_680
+	case 681:
+		goto st_case_681
+	case 325:
+		goto st_case_325
 	case 326:
 		goto st_case_326
 	case 327:
 		goto st_case_327
 	case 328:
 		goto st_case_328
-	case 659:
-		goto st_case_659
 	case 329:
 		goto st_case_329
 	case 330:
 		goto st_case_330
 	case 331:
 		goto st_case_331
-	case 660:
-		goto st_case_660
 	case 332:
 		goto st_case_332
 	case 333:
@@ -1386,8 +1388,68 @@ func Detect(data []byte) Type {
 		goto st_case_335
 	case 336:
 		goto st_case_336
-	case 661:
-		goto st_case_661
+	case 337:
+		goto st_case_337
+	case 682:
+		goto st_case_682
+	case 338:
+		goto st_case_338
+	case 339:
+		goto st_case_339
+	case 340:
+		goto st_case_340
+	case 341:
+		goto st_case_341
+	case 342:
+		goto st_case_342
+	case 343:
+		goto st_case_343
+	case 344:
+		goto st_case_344
+	case 345:
+		goto st_case_345
+	case 346:
+		goto st_case_346
+	case 347:
+		goto st_case_347
+	case 348:
+		goto st_case_348
+	case 349:
+		goto st_case_349
+	case 683:
+		goto st_case_683
+	case 350:
+		goto st_case_350
+	case 351:
+		goto st_case_351
+	case 352:
+		goto st_case_352
+	case 684:
+		goto st_case_684
+	case 353:
+		goto st_case_353
+	case 354:
+		goto st_case_354
+	case 355:
+		goto st_case_355
+	case 685:
+		goto st_case_685
+	case 356:
+		goto st_case_356
+	case 357:
+		goto st_case_357
+	case 358:
+		goto st_case_358
+	case 359:
+		goto st_case_359
+	case 360:
+		goto st_case_360
+	case 686:
+		goto st_case_686
+	case 361:
+		goto st_case_361
+	case 687:
+		goto st_case_687
 	}
 	goto st_out
 	st_case_1:
@@ -1398,38 +1460,44 @@ func Detect(data []byte) Type {
 			goto st269
 		case 33:
 			goto st271
-		case 37:
+		case 35:
 			goto st277
+		case 37:
+			goto st282
 		case 55:
-			goto st280
-		case 66:
 			goto st285
+		case 66:
+			goto st290
 		case 67:
-			goto st287
+			goto st292
 		case 68:
-			goto st291
+			goto st296
 		case 70:
-			goto st294
+			goto st299
 		case 73:
-			goto st295
+			goto st300
 		case 76:
-			goto st298
+			goto st304
 		case 77:
-			goto st306
-		case 78:
-			goto st309
-		case 80:
 			goto st312
-		case 82:
-			goto st316
-		case 123:
+		case 78:
+			goto st319
+		case 80:
 			goto st322
-		case 127:
+		case 82:
 			goto st326
+		case 102:
+			goto st338
+		case 123:
+			goto st346
+		case 127:
+			goto st350
 		case 237:
-			goto st329
+			goto st353
 		case 253:
-			goto st332
+			goto st356
+		case 255:
+			goto st361
 		}
 		goto st268
 	st2:
@@ -3011,26 +3079,26 @@ st_case_0:
 		}
 	st_case_261:
 		if data[p] == 114 {
-			goto st337
+			goto st362
 		}
 		goto st0
-	st337:
+	st362:
 		if p++; p == pe {
-			goto _test_eof337
+			goto _test_eof362
 		}
-	st_case_337:
-		goto tr360
-tr360:
-//line magic.rl:45
+	st_case_362:
+		goto tr391
+tr391:
+//line magic.rl:55
 return Tar;
-	goto st338
-	st338:
+	goto st363
+	st363:
 		if p++; p == pe {
-			goto _test_eof338
+			goto _test_eof363
 		}
-	st_case_338:
-//line magic.go:3033
-		goto st338
+	st_case_363:
+//line magic.go:3101
+		goto st363
 	st262:
 		if p++; p == pe {
 			goto _test_eof262
@@ -3082,185 +3150,25 @@ return Tar;
 		}
 	st_case_267:
 		if data[p] == 0 {
-			goto st339
+			goto st364
 		}
 		goto st9
-	st339:
-		if p++; p == pe {
-			goto _test_eof339
-		}
-	st_case_339:
-		goto tr362
-tr362:
-//line magic.rl:68
-return Wasm
-	goto st340
-	st340:
-		if p++; p == pe {
-			goto _test_eof340
-		}
-	st_case_340:
-//line magic.go:3104
-		goto st341
-	st341:
-		if p++; p == pe {
-			goto _test_eof341
-		}
-	st_case_341:
-		goto st342
-	st342:
-		if p++; p == pe {
-			goto _test_eof342
-		}
-	st_case_342:
-		goto st343
-	st343:
-		if p++; p == pe {
-			goto _test_eof343
-		}
-	st_case_343:
-		goto st344
-	st344:
-		if p++; p == pe {
-			goto _test_eof344
-		}
-	st_case_344:
-		goto st345
-	st345:
-		if p++; p == pe {
-			goto _test_eof345
-		}
-	st_case_345:
-		goto st346
-	st346:
-		if p++; p == pe {
-			goto _test_eof346
-		}
-	st_case_346:
-		goto st347
-	st347:
-		if p++; p == pe {
-			goto _test_eof347
-		}
-	st_case_347:
-		goto st348
-	st348:
-		if p++; p == pe {
-			goto _test_eof348
-		}
-	st_case_348:
-		goto st349
-	st349:
-		if p++; p == pe {
-			goto _test_eof349
-		}
-	st_case_349:
-		goto st350
-	st350:
-		if p++; p == pe {
-			goto _test_eof350
-		}
-	st_case_350:
-		goto st351
-	st351:
-		if p++; p == pe {
-			goto _test_eof351
-		}
-	st_case_351:
-		goto st352
-	st352:
-		if p++; p == pe {
-			goto _test_eof352
-		}
-	st_case_352:
-		goto st353
-tr637:
-//line magic.rl:60
-return Deb
-	goto st353
-	st353:
-		if p++; p == pe {
-			goto _test_eof353
-		}
-	st_case_353:
-//line magic.go:3187
-		goto st354
-	st354:
-		if p++; p == pe {
-			goto _test_eof354
-		}
-	st_case_354:
-		goto st355
-	st355:
-		if p++; p == pe {
-			goto _test_eof355
-		}
-	st_case_355:
-		goto st356
-	st356:
-		if p++; p == pe {
-			goto _test_eof356
-		}
-	st_case_356:
-		goto st357
-	st357:
-		if p++; p == pe {
-			goto _test_eof357
-		}
-	st_case_357:
-		goto st358
-	st358:
-		if p++; p == pe {
-			goto _test_eof358
-		}
-	st_case_358:
-		goto st359
-	st359:
-		if p++; p == pe {
-			goto _test_eof359
-		}
-	st_case_359:
-		goto st360
-	st360:
-		if p++; p == pe {
-			goto _test_eof360
-		}
-	st_case_360:
-		goto st361
-	st361:
-		if p++; p == pe {
-			goto _test_eof361
-		}
-	st_case_361:
-		goto st362
-	st362:
-		if p++; p == pe {
-			goto _test_eof362
-		}
-	st_case_362:
-		goto st363
-	st363:
-		if p++; p == pe {
-			goto _test_eof363
-		}
-	st_case_363:
-		goto st364
-tr679:
-//line magic.rl:43
- return Epub;
-	goto st364
 	st364:
 		if p++; p == pe {
 			goto _test_eof364
 		}
 	st_case_364:
-//line magic.go:3258
-		goto st365
+		goto tr393
+tr393:
+//line magic.rl:79
+return Wasm
+	goto st365
 	st365:
 		if p++; p == pe {
 			goto _test_eof365
 		}
 	st_case_365:
+//line magic.go:3172
 		goto st366
 	st366:
 		if p++; p == pe {
@@ -3334,11 +3242,16 @@ tr679:
 		}
 	st_case_377:
 		goto st378
+tr664:
+//line magic.rl:70
+return Deb
+	goto st378
 	st378:
 		if p++; p == pe {
 			goto _test_eof378
 		}
 	st_case_378:
+//line magic.go:3255
 		goto st379
 	st379:
 		if p++; p == pe {
@@ -3400,11 +3313,16 @@ tr679:
 		}
 	st_case_388:
 		goto st389
+tr706:
+//line magic.rl:53
+ return Epub;
+	goto st389
 	st389:
 		if p++; p == pe {
 			goto _test_eof389
 		}
 	st_case_389:
+//line magic.go:3326
 		goto st390
 	st390:
 		if p++; p == pe {
@@ -4593,46 +4511,196 @@ tr679:
 			goto _test_eof587
 		}
 	st_case_587:
-		if data[p] == 117 {
-			goto st588
-		}
-		goto st338
+		goto st588
 	st588:
 		if p++; p == pe {
 			goto _test_eof588
 		}
 	st_case_588:
-		if data[p] == 115 {
-			goto st589
-		}
-		goto st338
+		goto st589
 	st589:
 		if p++; p == pe {
 			goto _test_eof589
 		}
 	st_case_589:
-		if data[p] == 116 {
-			goto st590
-		}
-		goto st338
+		goto st590
 	st590:
 		if p++; p == pe {
 			goto _test_eof590
 		}
 	st_case_590:
-		if data[p] == 97 {
-			goto st591
-		}
-		goto st338
+		goto st591
 	st591:
 		if p++; p == pe {
 			goto _test_eof591
 		}
 	st_case_591:
-		if data[p] == 114 {
-			goto st337
+		goto st592
+	st592:
+		if p++; p == pe {
+			goto _test_eof592
 		}
-		goto st338
+	st_case_592:
+		goto st593
+	st593:
+		if p++; p == pe {
+			goto _test_eof593
+		}
+	st_case_593:
+		goto st594
+	st594:
+		if p++; p == pe {
+			goto _test_eof594
+		}
+	st_case_594:
+		goto st595
+	st595:
+		if p++; p == pe {
+			goto _test_eof595
+		}
+	st_case_595:
+		goto st596
+	st596:
+		if p++; p == pe {
+			goto _test_eof596
+		}
+	st_case_596:
+		goto st597
+	st597:
+		if p++; p == pe {
+			goto _test_eof597
+		}
+	st_case_597:
+		goto st598
+	st598:
+		if p++; p == pe {
+			goto _test_eof598
+		}
+	st_case_598:
+		goto st599
+	st599:
+		if p++; p == pe {
+			goto _test_eof599
+		}
+	st_case_599:
+		goto st600
+	st600:
+		if p++; p == pe {
+			goto _test_eof600
+		}
+	st_case_600:
+		goto st601
+	st601:
+		if p++; p == pe {
+			goto _test_eof601
+		}
+	st_case_601:
+		goto st602
+	st602:
+		if p++; p == pe {
+			goto _test_eof602
+		}
+	st_case_602:
+		goto st603
+	st603:
+		if p++; p == pe {
+			goto _test_eof603
+		}
+	st_case_603:
+		goto st604
+	st604:
+		if p++; p == pe {
+			goto _test_eof604
+		}
+	st_case_604:
+		goto st605
+	st605:
+		if p++; p == pe {
+			goto _test_eof605
+		}
+	st_case_605:
+		goto st606
+	st606:
+		if p++; p == pe {
+			goto _test_eof606
+		}
+	st_case_606:
+		goto st607
+	st607:
+		if p++; p == pe {
+			goto _test_eof607
+		}
+	st_case_607:
+		goto st608
+	st608:
+		if p++; p == pe {
+			goto _test_eof608
+		}
+	st_case_608:
+		goto st609
+	st609:
+		if p++; p == pe {
+			goto _test_eof609
+		}
+	st_case_609:
+		goto st610
+	st610:
+		if p++; p == pe {
+			goto _test_eof610
+		}
+	st_case_610:
+		goto st611
+	st611:
+		if p++; p == pe {
+			goto _test_eof611
+		}
+	st_case_611:
+		goto st612
+	st612:
+		if p++; p == pe {
+			goto _test_eof612
+		}
+	st_case_612:
+		if data[p] == 117 {
+			goto st613
+		}
+		goto st363
+	st613:
+		if p++; p == pe {
+			goto _test_eof613
+		}
+	st_case_613:
+		if data[p] == 115 {
+			goto st614
+		}
+		goto st363
+	st614:
+		if p++; p == pe {
+			goto _test_eof614
+		}
+	st_case_614:
+		if data[p] == 116 {
+			goto st615
+		}
+		goto st363
+	st615:
+		if p++; p == pe {
+			goto _test_eof615
+		}
+	st_case_615:
+		if data[p] == 97 {
+			goto st616
+		}
+		goto st363
+	st616:
+		if p++; p == pe {
+			goto _test_eof616
+		}
+	st_case_616:
+		if data[p] == 114 {
+			goto st362
+		}
+		goto st363
 	st268:
 		if p++; p == pe {
 			goto _test_eof268
@@ -4648,9 +4716,9 @@ tr679:
 		case 139:
 			goto st270
 		case 157:
-			goto st598
+			goto st623
 		case 160:
-			goto st598
+			goto st623
 		}
 		goto st3
 	st270:
@@ -4659,147 +4727,147 @@ tr679:
 		}
 	st_case_270:
 		if data[p] == 8 {
-			goto st592
+			goto st617
 		}
 		goto st4
-	st592:
+	st617:
 		if p++; p == pe {
-			goto _test_eof592
+			goto _test_eof617
 		}
-	st_case_592:
-		goto tr614
-tr614:
-//line magic.rl:47
-return Gzip;
-	goto st593
-tr641:
-//line magic.rl:48
-return Bz2;
-	goto st593
-tr642:
-//line magic.rl:52
-return Swf
-	goto st593
-	st593:
-		if p++; p == pe {
-			goto _test_eof593
-		}
-	st_case_593:
-//line magic.go:4689
-		goto st594
-tr639:
-//line magic.rl:50
-return Pdf
-	goto st594
-tr643:
-//line magic.rl:55
-return Crs
-	goto st594
-tr644:
-//line magic.rl:66
-return Dcm
-	goto st594
+	st_case_617:
+		goto tr645
 tr645:
-//line magic.rl:56
-return Cab
-	goto st594
-tr647:
-//line magic.rl:63
-return Lz
-	goto st594
-tr649:
-//line magic.rl:54
-return Nes
-	goto st594
-tr650:
-//line magic.rl:44
-return Zip;
-	goto st594
-tr682:
-//line magic.rl:65
-return Elf
-	goto st594
-tr683:
-//line magic.rl:64
-return Rpm
-	goto st594
-	st594:
-		if p++; p == pe {
-			goto _test_eof594
-		}
-	st_case_594:
-//line magic.go:4732
-		goto st595
-tr646:
 //line magic.rl:57
-return Eot
-	goto st595
-tr681:
-//line magic.rl:53
-return Rtf
-	goto st595
-	st595:
-		if p++; p == pe {
-			goto _test_eof595
-		}
-	st_case_595:
-//line magic.go:4747
-		goto st596
-tr640:
-//line magic.rl:49
-return SevenZip;
-	goto st596
-tr684:
-//line magic.rl:59
-return Xz
-	goto st596
-	st596:
-		if p++; p == pe {
-			goto _test_eof596
-		}
-	st_case_596:
-//line magic.go:4762
-		goto st597
-tr622:
-//line magic.rl:61
-return Ar
-	goto st597
-tr680:
-//line magic.rl:46
-return Rar;
-	goto st597
-	st597:
-		if p++; p == pe {
-			goto _test_eof597
-		}
-	st_case_597:
-//line magic.go:4777
-		goto st340
-	st598:
-		if p++; p == pe {
-			goto _test_eof598
-		}
-	st_case_598:
-		goto tr620
-tr620:
-//line magic.rl:62
-return Z
-	goto st599
-tr638:
+return Gzip;
+	goto st618
+tr668:
 //line magic.rl:58
-return Ps
-	goto st599
-tr648:
-//line magic.rl:51
-return Exe
-	goto st599
-	st599:
+return Bz2;
+	goto st618
+tr669:
+//line magic.rl:62
+return Swf
+	goto st618
+	st618:
 		if p++; p == pe {
-			goto _test_eof599
+			goto _test_eof618
 		}
-	st_case_599:
-//line magic.go:4802
-		goto st593
+	st_case_618:
+//line magic.go:4757
+		goto st619
+tr666:
+//line magic.rl:60
+return Pdf
+	goto st619
+tr670:
+//line magic.rl:65
+return Crs
+	goto st619
+tr671:
+//line magic.rl:76
+return Dcm
+	goto st619
+tr672:
+//line magic.rl:66
+return Cab
+	goto st619
+tr674:
+//line magic.rl:73
+return Lz
+	goto st619
+tr676:
+//line magic.rl:64
+return Nes
+	goto st619
+tr677:
+//line magic.rl:54
+return Zip;
+	goto st619
+tr709:
+//line magic.rl:75
+return Elf
+	goto st619
+tr710:
+//line magic.rl:74
+return Rpm
+	goto st619
+	st619:
+		if p++; p == pe {
+			goto _test_eof619
+		}
+	st_case_619:
+//line magic.go:4800
+		goto st620
+tr673:
+//line magic.rl:67
+return Eot
+	goto st620
+tr708:
+//line magic.rl:63
+return Rtf
+	goto st620
+	st620:
+		if p++; p == pe {
+			goto _test_eof620
+		}
+	st_case_620:
+//line magic.go:4815
+		goto st621
+tr667:
+//line magic.rl:59
+return SevenZip;
+	goto st621
+tr711:
+//line magic.rl:69
+return Xz
+	goto st621
+	st621:
+		if p++; p == pe {
+			goto _test_eof621
+		}
+	st_case_621:
+//line magic.go:4830
+		goto st622
+tr649:
+//line magic.rl:71
+return Ar
+	goto st622
+tr707:
+//line magic.rl:56
+return Rar;
+	goto st622
+	st622:
+		if p++; p == pe {
+			goto _test_eof622
+		}
+	st_case_622:
+//line magic.go:4845
+		goto st365
+	st623:
+		if p++; p == pe {
+			goto _test_eof623
+		}
+	st_case_623:
+		goto tr648
+tr648:
+//line magic.rl:72
+return Z
+	goto st624
+tr665:
+//line magic.rl:68
+return Ps
+	goto st624
+tr675:
+//line magic.rl:61
+return Exe
+	goto st624
+	st624:
+		if p++; p == pe {
+			goto _test_eof624
+		}
+	st_case_624:
+//line magic.go:4870
+		goto st618
 	st271:
 		if p++; p == pe {
 			goto _test_eof271
@@ -4851,170 +4919,161 @@ return Exe
 		}
 	st_case_276:
 		if data[p] == 62 {
-			goto st600
+			goto st625
 		}
 		goto st8
-	st600:
+	st625:
 		if p++; p == pe {
-			goto _test_eof600
+			goto _test_eof625
 		}
-	st_case_600:
+	st_case_625:
 		if data[p] == 10 {
-			goto tr623
+			goto tr650
 		}
-		goto tr622
-tr623:
-//line magic.rl:61
+		goto tr649
+tr650:
+//line magic.rl:71
 return Ar
-	goto st601
-	st601:
+	goto st626
+	st626:
 		if p++; p == pe {
-			goto _test_eof601
+			goto _test_eof626
 		}
-	st_case_601:
-//line magic.go:4876
+	st_case_626:
+//line magic.go:4944
 		if data[p] == 100 {
-			goto st602
+			goto st627
 		}
-		goto st340
-	st602:
+		goto st365
+	st627:
 		if p++; p == pe {
-			goto _test_eof602
+			goto _test_eof627
 		}
-	st_case_602:
+	st_case_627:
 		if data[p] == 101 {
-			goto st603
+			goto st628
 		}
-		goto st341
-	st603:
+		goto st366
+	st628:
 		if p++; p == pe {
-			goto _test_eof603
+			goto _test_eof628
 		}
-	st_case_603:
+	st_case_628:
 		if data[p] == 98 {
-			goto st604
+			goto st629
 		}
-		goto st342
-	st604:
+		goto st367
+	st629:
 		if p++; p == pe {
-			goto _test_eof604
+			goto _test_eof629
 		}
-	st_case_604:
+	st_case_629:
 		if data[p] == 105 {
-			goto st605
+			goto st630
 		}
-		goto st343
-	st605:
+		goto st368
+	st630:
 		if p++; p == pe {
-			goto _test_eof605
+			goto _test_eof630
 		}
-	st_case_605:
+	st_case_630:
 		if data[p] == 97 {
-			goto st606
+			goto st631
 		}
-		goto st344
-	st606:
+		goto st369
+	st631:
 		if p++; p == pe {
-			goto _test_eof606
+			goto _test_eof631
 		}
-	st_case_606:
+	st_case_631:
 		if data[p] == 110 {
-			goto st607
+			goto st632
 		}
-		goto st345
-	st607:
+		goto st370
+	st632:
 		if p++; p == pe {
-			goto _test_eof607
+			goto _test_eof632
 		}
-	st_case_607:
+	st_case_632:
 		if data[p] == 45 {
-			goto st608
+			goto st633
 		}
-		goto st346
-	st608:
+		goto st371
+	st633:
 		if p++; p == pe {
-			goto _test_eof608
+			goto _test_eof633
 		}
-	st_case_608:
+	st_case_633:
 		if data[p] == 98 {
-			goto st609
+			goto st634
 		}
-		goto st347
-	st609:
+		goto st372
+	st634:
 		if p++; p == pe {
-			goto _test_eof609
+			goto _test_eof634
 		}
-	st_case_609:
+	st_case_634:
 		if data[p] == 105 {
-			goto st610
+			goto st635
 		}
-		goto st348
-	st610:
+		goto st373
+	st635:
 		if p++; p == pe {
-			goto _test_eof610
+			goto _test_eof635
 		}
-	st_case_610:
+	st_case_635:
 		if data[p] == 110 {
-			goto st611
+			goto st636
 		}
-		goto st349
-	st611:
+		goto st374
+	st636:
 		if p++; p == pe {
-			goto _test_eof611
+			goto _test_eof636
 		}
-	st_case_611:
+	st_case_636:
 		if data[p] == 97 {
-			goto st612
+			goto st637
 		}
-		goto st350
-	st612:
+		goto st375
+	st637:
 		if p++; p == pe {
-			goto _test_eof612
+			goto _test_eof637
 		}
-	st_case_612:
+	st_case_637:
 		if data[p] == 114 {
-			goto st613
+			goto st638
 		}
-		goto st351
-	st613:
+		goto st376
+	st638:
 		if p++; p == pe {
-			goto _test_eof613
+			goto _test_eof638
 		}
-	st_case_613:
+	st_case_638:
 		if data[p] == 121 {
-			goto st614
+			goto st639
 		}
-		goto st352
-	st614:
+		goto st377
+	st639:
 		if p++; p == pe {
-			goto _test_eof614
+			goto _test_eof639
 		}
-	st_case_614:
-		goto tr637
+	st_case_639:
+		goto tr664
 	st277:
 		if p++; p == pe {
 			goto _test_eof277
 		}
 	st_case_277:
-		switch data[p] {
-		case 33:
-			goto st615
-		case 80:
+		if data[p] == 33 {
 			goto st278
 		}
 		goto st3
-	st615:
-		if p++; p == pe {
-			goto _test_eof615
-		}
-	st_case_615:
-		goto tr638
 	st278:
 		if p++; p == pe {
 			goto _test_eof278
 		}
 	st_case_278:
-		if data[p] == 68 {
+		if data[p] == 65 {
 			goto st279
 		}
 		goto st4
@@ -5023,73 +5082,76 @@ return Ar
 			goto _test_eof279
 		}
 	st_case_279:
-		if data[p] == 70 {
-			goto st616
+		if data[p] == 77 {
+			goto st280
 		}
 		goto st5
-	st616:
-		if p++; p == pe {
-			goto _test_eof616
-		}
-	st_case_616:
-		goto tr639
 	st280:
 		if p++; p == pe {
 			goto _test_eof280
 		}
 	st_case_280:
-		if data[p] == 122 {
+		if data[p] == 82 {
 			goto st281
 		}
-		goto st3
+		goto st6
 	st281:
 		if p++; p == pe {
 			goto _test_eof281
 		}
 	st_case_281:
-		if data[p] == 188 {
-			goto st282
+		if data[p] == 10 {
+			goto st620
 		}
-		goto st4
+		goto st7
 	st282:
 		if p++; p == pe {
 			goto _test_eof282
 		}
 	st_case_282:
-		if data[p] == 175 {
+		switch data[p] {
+		case 33:
+			goto st640
+		case 80:
 			goto st283
 		}
-		goto st5
+		goto st3
+	st640:
+		if p++; p == pe {
+			goto _test_eof640
+		}
+	st_case_640:
+		goto tr665
 	st283:
 		if p++; p == pe {
 			goto _test_eof283
 		}
 	st_case_283:
-		if data[p] == 39 {
+		if data[p] == 68 {
 			goto st284
 		}
-		goto st6
+		goto st4
 	st284:
 		if p++; p == pe {
 			goto _test_eof284
 		}
 	st_case_284:
-		if data[p] == 28 {
-			goto st617
+		if data[p] == 70 {
+			goto st641
 		}
-		goto st7
-	st617:
+		goto st5
+	st641:
 		if p++; p == pe {
-			goto _test_eof617
+			goto _test_eof641
 		}
-	st_case_617:
-		goto tr640
+	st_case_641:
+		goto tr666
 	st285:
 		if p++; p == pe {
 			goto _test_eof285
 		}
 	st_case_285:
-		if data[p] == 90 {
+		if data[p] == 122 {
 			goto st286
 		}
 		goto st3
@@ -5098,283 +5160,277 @@ return Ar
 			goto _test_eof286
 		}
 	st_case_286:
-		if data[p] == 104 {
-			goto st618
+		if data[p] == 188 {
+			goto st287
 		}
 		goto st4
-	st618:
-		if p++; p == pe {
-			goto _test_eof618
-		}
-	st_case_618:
-		goto tr641
 	st287:
 		if p++; p == pe {
 			goto _test_eof287
 		}
 	st_case_287:
-		switch data[p] {
-		case 87:
+		if data[p] == 175 {
 			goto st288
-		case 114:
-			goto st289
 		}
-		goto st3
+		goto st5
 	st288:
 		if p++; p == pe {
 			goto _test_eof288
 		}
 	st_case_288:
-		if data[p] == 83 {
-			goto st619
+		if data[p] == 39 {
+			goto st289
 		}
-		goto st4
-	st619:
-		if p++; p == pe {
-			goto _test_eof619
-		}
-	st_case_619:
-		goto tr642
+		goto st6
 	st289:
 		if p++; p == pe {
 			goto _test_eof289
 		}
 	st_case_289:
-		if data[p] == 50 {
-			goto st290
+		if data[p] == 28 {
+			goto st642
 		}
-		goto st4
+		goto st7
+	st642:
+		if p++; p == pe {
+			goto _test_eof642
+		}
+	st_case_642:
+		goto tr667
 	st290:
 		if p++; p == pe {
 			goto _test_eof290
 		}
 	st_case_290:
-		if data[p] == 52 {
-			goto st620
+		if data[p] == 90 {
+			goto st291
 		}
-		goto st5
-	st620:
-		if p++; p == pe {
-			goto _test_eof620
-		}
-	st_case_620:
-		goto tr643
+		goto st3
 	st291:
 		if p++; p == pe {
 			goto _test_eof291
 		}
 	st_case_291:
-		if data[p] == 73 {
-			goto st292
+		if data[p] == 104 {
+			goto st643
 		}
-		goto st3
+		goto st4
+	st643:
+		if p++; p == pe {
+			goto _test_eof643
+		}
+	st_case_643:
+		goto tr668
 	st292:
 		if p++; p == pe {
 			goto _test_eof292
 		}
 	st_case_292:
-		if data[p] == 67 {
+		switch data[p] {
+		case 87:
 			goto st293
+		case 114:
+			goto st294
 		}
-		goto st4
+		goto st3
 	st293:
 		if p++; p == pe {
 			goto _test_eof293
 		}
 	st_case_293:
-		if data[p] == 77 {
-			goto st621
+		if data[p] == 83 {
+			goto st644
 		}
-		goto st5
-	st621:
+		goto st4
+	st644:
 		if p++; p == pe {
-			goto _test_eof621
+			goto _test_eof644
 		}
-	st_case_621:
-		goto tr644
+	st_case_644:
+		goto tr669
 	st294:
 		if p++; p == pe {
 			goto _test_eof294
 		}
 	st_case_294:
-		if data[p] == 87 {
-			goto st288
+		if data[p] == 50 {
+			goto st295
 		}
-		goto st3
+		goto st4
 	st295:
 		if p++; p == pe {
 			goto _test_eof295
 		}
 	st_case_295:
-		if data[p] == 83 {
-			goto st296
+		if data[p] == 52 {
+			goto st645
 		}
-		goto st3
+		goto st5
+	st645:
+		if p++; p == pe {
+			goto _test_eof645
+		}
+	st_case_645:
+		goto tr670
 	st296:
 		if p++; p == pe {
 			goto _test_eof296
 		}
 	st_case_296:
-		if data[p] == 99 {
+		if data[p] == 73 {
 			goto st297
 		}
-		goto st4
+		goto st3
 	st297:
 		if p++; p == pe {
 			goto _test_eof297
 		}
 	st_case_297:
-		if data[p] == 40 {
-			goto st622
+		if data[p] == 67 {
+			goto st298
 		}
-		goto st5
-	st622:
-		if p++; p == pe {
-			goto _test_eof622
-		}
-	st_case_622:
-		goto tr645
+		goto st4
 	st298:
 		if p++; p == pe {
 			goto _test_eof298
 		}
 	st_case_298:
-		switch data[p] {
-		case 80:
-			goto st299
-		case 90:
-			goto st304
+		if data[p] == 77 {
+			goto st646
 		}
-		goto st3
+		goto st5
+	st646:
+		if p++; p == pe {
+			goto _test_eof646
+		}
+	st_case_646:
+		goto tr671
 	st299:
 		if p++; p == pe {
 			goto _test_eof299
 		}
 	st_case_299:
-		switch data[p] {
-		case 1:
-			goto st300
-		case 2:
-			goto st302
+		if data[p] == 87 {
+			goto st293
 		}
-		goto st4
+		goto st3
 	st300:
 		if p++; p == pe {
 			goto _test_eof300
 		}
 	st_case_300:
-		if data[p] == 0 {
+		switch data[p] {
+		case 68:
 			goto st301
+		case 83:
+			goto st302
 		}
-		goto st5
+		goto st3
 	st301:
 		if p++; p == pe {
 			goto _test_eof301
 		}
 	st_case_301:
-		if data[p] == 0 {
-			goto st623
+		if data[p] == 51 {
+			goto st624
 		}
-		goto st6
-	st623:
-		if p++; p == pe {
-			goto _test_eof623
-		}
-	st_case_623:
-		goto tr646
+		goto st4
 	st302:
 		if p++; p == pe {
 			goto _test_eof302
 		}
 	st_case_302:
-		if data[p] == 0 {
+		if data[p] == 99 {
 			goto st303
 		}
-		goto st5
+		goto st4
 	st303:
 		if p++; p == pe {
 			goto _test_eof303
 		}
 	st_case_303:
-		if 1 <= data[p] && data[p] <= 2 {
-			goto st623
+		if data[p] == 40 {
+			goto st647
 		}
-		goto st6
+		goto st5
+	st647:
+		if p++; p == pe {
+			goto _test_eof647
+		}
+	st_case_647:
+		goto tr672
 	st304:
 		if p++; p == pe {
 			goto _test_eof304
 		}
 	st_case_304:
-		if data[p] == 73 {
+		switch data[p] {
+		case 80:
 			goto st305
+		case 90:
+			goto st310
 		}
-		goto st4
+		goto st3
 	st305:
 		if p++; p == pe {
 			goto _test_eof305
 		}
 	st_case_305:
-		if data[p] == 80 {
-			goto st624
+		switch data[p] {
+		case 1:
+			goto st306
+		case 2:
+			goto st308
 		}
-		goto st5
-	st624:
-		if p++; p == pe {
-			goto _test_eof624
-		}
-	st_case_624:
-		goto tr647
+		goto st4
 	st306:
 		if p++; p == pe {
 			goto _test_eof306
 		}
 	st_case_306:
-		switch data[p] {
-		case 83:
+		if data[p] == 0 {
 			goto st307
-		case 90:
-			goto st625
 		}
-		goto st3
+		goto st5
 	st307:
 		if p++; p == pe {
 			goto _test_eof307
 		}
 	st_case_307:
-		if data[p] == 67 {
-			goto st308
+		if data[p] == 0 {
+			goto st648
 		}
-		goto st4
+		goto st6
+	st648:
+		if p++; p == pe {
+			goto _test_eof648
+		}
+	st_case_648:
+		goto tr673
 	st308:
 		if p++; p == pe {
 			goto _test_eof308
 		}
 	st_case_308:
-		if data[p] == 70 {
-			goto st622
+		if data[p] == 0 {
+			goto st309
 		}
 		goto st5
-	st625:
-		if p++; p == pe {
-			goto _test_eof625
-		}
-	st_case_625:
-		goto tr648
 	st309:
 		if p++; p == pe {
 			goto _test_eof309
 		}
 	st_case_309:
-		if data[p] == 69 {
-			goto st310
+		if 1 <= data[p] && data[p] <= 2 {
+			goto st648
 		}
-		goto st3
+		goto st6
 	st310:
 		if p++; p == pe {
 			goto _test_eof310
 		}
 	st_case_310:
-		if data[p] == 83 {
+		if data[p] == 73 {
 			goto st311
 		}
 		goto st4
@@ -5383,23 +5439,30 @@ return Ar
 			goto _test_eof311
 		}
 	st_case_311:
-		if data[p] == 26 {
-			goto st626
+		if data[p] == 80 {
+			goto st649
 		}
 		goto st5
-	st626:
+	st649:
 		if p++; p == pe {
-			goto _test_eof626
+			goto _test_eof649
 		}
-	st_case_626:
-		goto tr649
+	st_case_649:
+		goto tr674
 	st312:
 		if p++; p == pe {
 			goto _test_eof312
 		}
 	st_case_312:
-		if data[p] == 75 {
+		switch data[p] {
+		case 52:
 			goto st313
+		case 83:
+			goto st315
+		case 84:
+			goto st317
+		case 90:
+			goto st650
 		}
 		goto st3
 	st313:
@@ -5407,13 +5470,8 @@ return Ar
 			goto _test_eof313
 		}
 	st_case_313:
-		switch data[p] {
-		case 3:
+		if data[p] == 65 {
 			goto st314
-		case 5:
-			goto st315
-		case 7:
-			goto st315
 		}
 		goto st4
 	st314:
@@ -5421,313 +5479,34 @@ return Ar
 			goto _test_eof314
 		}
 	st_case_314:
-		switch data[p] {
-		case 4:
-			goto st627
-		case 6:
-			goto st656
-		case 8:
-			goto st656
+		if data[p] == 32 {
+			goto st618
 		}
 		goto st5
-	st627:
-		if p++; p == pe {
-			goto _test_eof627
-		}
-	st_case_627:
-		if data[p] == 109 {
-			goto tr651
-		}
-		goto tr650
-tr651:
-//line magic.rl:44
-return Zip;
-	goto st628
-	st628:
-		if p++; p == pe {
-			goto _test_eof628
-		}
-	st_case_628:
-//line magic.go:5452
-		if data[p] == 105 {
-			goto st629
-		}
-		goto st595
-	st629:
-		if p++; p == pe {
-			goto _test_eof629
-		}
-	st_case_629:
-		if data[p] == 109 {
-			goto st630
-		}
-		goto st596
-	st630:
-		if p++; p == pe {
-			goto _test_eof630
-		}
-	st_case_630:
-		if data[p] == 101 {
-			goto st631
-		}
-		goto st597
-	st631:
-		if p++; p == pe {
-			goto _test_eof631
-		}
-	st_case_631:
-		if data[p] == 116 {
-			goto st632
-		}
-		goto st340
-	st632:
-		if p++; p == pe {
-			goto _test_eof632
-		}
-	st_case_632:
-		if data[p] == 121 {
-			goto st633
-		}
-		goto st341
-	st633:
-		if p++; p == pe {
-			goto _test_eof633
-		}
-	st_case_633:
-		if data[p] == 112 {
-			goto st634
-		}
-		goto st342
-	st634:
-		if p++; p == pe {
-			goto _test_eof634
-		}
-	st_case_634:
-		if data[p] == 101 {
-			goto st635
-		}
-		goto st343
-	st635:
-		if p++; p == pe {
-			goto _test_eof635
-		}
-	st_case_635:
-		if data[p] == 97 {
-			goto st636
-		}
-		goto st344
-	st636:
-		if p++; p == pe {
-			goto _test_eof636
-		}
-	st_case_636:
-		if data[p] == 112 {
-			goto st637
-		}
-		goto st345
-	st637:
-		if p++; p == pe {
-			goto _test_eof637
-		}
-	st_case_637:
-		if data[p] == 112 {
-			goto st638
-		}
-		goto st346
-	st638:
-		if p++; p == pe {
-			goto _test_eof638
-		}
-	st_case_638:
-		if data[p] == 108 {
-			goto st639
-		}
-		goto st347
-	st639:
-		if p++; p == pe {
-			goto _test_eof639
-		}
-	st_case_639:
-		if data[p] == 105 {
-			goto st640
-		}
-		goto st348
-	st640:
-		if p++; p == pe {
-			goto _test_eof640
-		}
-	st_case_640:
-		if data[p] == 99 {
-			goto st641
-		}
-		goto st349
-	st641:
-		if p++; p == pe {
-			goto _test_eof641
-		}
-	st_case_641:
-		if data[p] == 97 {
-			goto st642
-		}
-		goto st350
-	st642:
-		if p++; p == pe {
-			goto _test_eof642
-		}
-	st_case_642:
-		if data[p] == 116 {
-			goto st643
-		}
-		goto st351
-	st643:
-		if p++; p == pe {
-			goto _test_eof643
-		}
-	st_case_643:
-		if data[p] == 105 {
-			goto st644
-		}
-		goto st352
-	st644:
-		if p++; p == pe {
-			goto _test_eof644
-		}
-	st_case_644:
-		if data[p] == 111 {
-			goto st645
-		}
-		goto st353
-	st645:
-		if p++; p == pe {
-			goto _test_eof645
-		}
-	st_case_645:
-		if data[p] == 110 {
-			goto st646
-		}
-		goto st354
-	st646:
-		if p++; p == pe {
-			goto _test_eof646
-		}
-	st_case_646:
-		if data[p] == 47 {
-			goto st647
-		}
-		goto st355
-	st647:
-		if p++; p == pe {
-			goto _test_eof647
-		}
-	st_case_647:
-		if data[p] == 101 {
-			goto st648
-		}
-		goto st356
-	st648:
-		if p++; p == pe {
-			goto _test_eof648
-		}
-	st_case_648:
-		if data[p] == 112 {
-			goto st649
-		}
-		goto st357
-	st649:
-		if p++; p == pe {
-			goto _test_eof649
-		}
-	st_case_649:
-		if data[p] == 117 {
-			goto st650
-		}
-		goto st358
-	st650:
-		if p++; p == pe {
-			goto _test_eof650
-		}
-	st_case_650:
-		if data[p] == 98 {
-			goto st651
-		}
-		goto st359
-	st651:
-		if p++; p == pe {
-			goto _test_eof651
-		}
-	st_case_651:
-		if data[p] == 43 {
-			goto st652
-		}
-		goto st360
-	st652:
-		if p++; p == pe {
-			goto _test_eof652
-		}
-	st_case_652:
-		if data[p] == 122 {
-			goto st653
-		}
-		goto st361
-	st653:
-		if p++; p == pe {
-			goto _test_eof653
-		}
-	st_case_653:
-		if data[p] == 105 {
-			goto st654
-		}
-		goto st362
-	st654:
-		if p++; p == pe {
-			goto _test_eof654
-		}
-	st_case_654:
-		if data[p] == 112 {
-			goto st655
-		}
-		goto st363
-	st655:
-		if p++; p == pe {
-			goto _test_eof655
-		}
-	st_case_655:
-		goto tr679
-	st656:
-		if p++; p == pe {
-			goto _test_eof656
-		}
-	st_case_656:
-		goto tr650
 	st315:
 		if p++; p == pe {
 			goto _test_eof315
 		}
 	st_case_315:
-		switch data[p] {
-		case 4:
-			goto st656
-		case 6:
-			goto st656
-		case 8:
-			goto st656
+		if data[p] == 67 {
+			goto st316
 		}
-		goto st5
+		goto st4
 	st316:
 		if p++; p == pe {
 			goto _test_eof316
 		}
 	st_case_316:
-		if data[p] == 97 {
-			goto st317
+		if data[p] == 70 {
+			goto st647
 		}
-		goto st3
+		goto st5
 	st317:
 		if p++; p == pe {
 			goto _test_eof317
 		}
 	st_case_317:
-		if data[p] == 114 {
+		if data[p] == 104 {
 			goto st318
 		}
 		goto st4
@@ -5736,49 +5515,55 @@ return Zip;
 			goto _test_eof318
 		}
 	st_case_318:
-		if data[p] == 33 {
-			goto st319
+		if data[p] == 100 {
+			goto st618
 		}
 		goto st5
+	st650:
+		if p++; p == pe {
+			goto _test_eof650
+		}
+	st_case_650:
+		goto tr675
 	st319:
 		if p++; p == pe {
 			goto _test_eof319
 		}
 	st_case_319:
-		if data[p] == 26 {
+		if data[p] == 69 {
 			goto st320
 		}
-		goto st6
+		goto st3
 	st320:
 		if p++; p == pe {
 			goto _test_eof320
 		}
 	st_case_320:
-		if data[p] == 7 {
+		if data[p] == 83 {
 			goto st321
 		}
-		goto st7
+		goto st4
 	st321:
 		if p++; p == pe {
 			goto _test_eof321
 		}
 	st_case_321:
-		if data[p] <= 1 {
-			goto st657
+		if data[p] == 26 {
+			goto st651
 		}
-		goto st8
-	st657:
+		goto st5
+	st651:
 		if p++; p == pe {
-			goto _test_eof657
+			goto _test_eof651
 		}
-	st_case_657:
-		goto tr680
+	st_case_651:
+		goto tr676
 	st322:
 		if p++; p == pe {
 			goto _test_eof322
 		}
 	st_case_322:
-		if data[p] == 92 {
+		if data[p] == 75 {
 			goto st323
 		}
 		goto st3
@@ -5787,8 +5572,13 @@ return Zip;
 			goto _test_eof323
 		}
 	st_case_323:
-		if data[p] == 114 {
+		switch data[p] {
+		case 3:
 			goto st324
+		case 5:
+			goto st325
+		case 7:
+			goto st325
 		}
 		goto st4
 	st324:
@@ -5796,32 +5586,308 @@ return Zip;
 			goto _test_eof324
 		}
 	st_case_324:
-		if data[p] == 116 {
-			goto st325
+		switch data[p] {
+		case 4:
+			goto st652
+		case 6:
+			goto st681
+		case 8:
+			goto st681
 		}
 		goto st5
-	st325:
+	st652:
 		if p++; p == pe {
-			goto _test_eof325
+			goto _test_eof652
 		}
-	st_case_325:
-		if data[p] == 102 {
+	st_case_652:
+		if data[p] == 109 {
+			goto tr678
+		}
+		goto tr677
+tr678:
+//line magic.rl:54
+return Zip;
+	goto st653
+	st653:
+		if p++; p == pe {
+			goto _test_eof653
+		}
+	st_case_653:
+//line magic.go:5617
+		if data[p] == 105 {
+			goto st654
+		}
+		goto st620
+	st654:
+		if p++; p == pe {
+			goto _test_eof654
+		}
+	st_case_654:
+		if data[p] == 109 {
+			goto st655
+		}
+		goto st621
+	st655:
+		if p++; p == pe {
+			goto _test_eof655
+		}
+	st_case_655:
+		if data[p] == 101 {
+			goto st656
+		}
+		goto st622
+	st656:
+		if p++; p == pe {
+			goto _test_eof656
+		}
+	st_case_656:
+		if data[p] == 116 {
+			goto st657
+		}
+		goto st365
+	st657:
+		if p++; p == pe {
+			goto _test_eof657
+		}
+	st_case_657:
+		if data[p] == 121 {
 			goto st658
 		}
-		goto st6
+		goto st366
 	st658:
 		if p++; p == pe {
 			goto _test_eof658
 		}
 	st_case_658:
-		goto tr681
+		if data[p] == 112 {
+			goto st659
+		}
+		goto st367
+	st659:
+		if p++; p == pe {
+			goto _test_eof659
+		}
+	st_case_659:
+		if data[p] == 101 {
+			goto st660
+		}
+		goto st368
+	st660:
+		if p++; p == pe {
+			goto _test_eof660
+		}
+	st_case_660:
+		if data[p] == 97 {
+			goto st661
+		}
+		goto st369
+	st661:
+		if p++; p == pe {
+			goto _test_eof661
+		}
+	st_case_661:
+		if data[p] == 112 {
+			goto st662
+		}
+		goto st370
+	st662:
+		if p++; p == pe {
+			goto _test_eof662
+		}
+	st_case_662:
+		if data[p] == 112 {
+			goto st663
+		}
+		goto st371
+	st663:
+		if p++; p == pe {
+			goto _test_eof663
+		}
+	st_case_663:
+		if data[p] == 108 {
+			goto st664
+		}
+		goto st372
+	st664:
+		if p++; p == pe {
+			goto _test_eof664
+		}
+	st_case_664:
+		if data[p] == 105 {
+			goto st665
+		}
+		goto st373
+	st665:
+		if p++; p == pe {
+			goto _test_eof665
+		}
+	st_case_665:
+		if data[p] == 99 {
+			goto st666
+		}
+		goto st374
+	st666:
+		if p++; p == pe {
+			goto _test_eof666
+		}
+	st_case_666:
+		if data[p] == 97 {
+			goto st667
+		}
+		goto st375
+	st667:
+		if p++; p == pe {
+			goto _test_eof667
+		}
+	st_case_667:
+		if data[p] == 116 {
+			goto st668
+		}
+		goto st376
+	st668:
+		if p++; p == pe {
+			goto _test_eof668
+		}
+	st_case_668:
+		if data[p] == 105 {
+			goto st669
+		}
+		goto st377
+	st669:
+		if p++; p == pe {
+			goto _test_eof669
+		}
+	st_case_669:
+		if data[p] == 111 {
+			goto st670
+		}
+		goto st378
+	st670:
+		if p++; p == pe {
+			goto _test_eof670
+		}
+	st_case_670:
+		if data[p] == 110 {
+			goto st671
+		}
+		goto st379
+	st671:
+		if p++; p == pe {
+			goto _test_eof671
+		}
+	st_case_671:
+		if data[p] == 47 {
+			goto st672
+		}
+		goto st380
+	st672:
+		if p++; p == pe {
+			goto _test_eof672
+		}
+	st_case_672:
+		if data[p] == 101 {
+			goto st673
+		}
+		goto st381
+	st673:
+		if p++; p == pe {
+			goto _test_eof673
+		}
+	st_case_673:
+		if data[p] == 112 {
+			goto st674
+		}
+		goto st382
+	st674:
+		if p++; p == pe {
+			goto _test_eof674
+		}
+	st_case_674:
+		if data[p] == 117 {
+			goto st675
+		}
+		goto st383
+	st675:
+		if p++; p == pe {
+			goto _test_eof675
+		}
+	st_case_675:
+		if data[p] == 98 {
+			goto st676
+		}
+		goto st384
+	st676:
+		if p++; p == pe {
+			goto _test_eof676
+		}
+	st_case_676:
+		if data[p] == 43 {
+			goto st677
+		}
+		goto st385
+	st677:
+		if p++; p == pe {
+			goto _test_eof677
+		}
+	st_case_677:
+		if data[p] == 122 {
+			goto st678
+		}
+		goto st386
+	st678:
+		if p++; p == pe {
+			goto _test_eof678
+		}
+	st_case_678:
+		if data[p] == 105 {
+			goto st679
+		}
+		goto st387
+	st679:
+		if p++; p == pe {
+			goto _test_eof679
+		}
+	st_case_679:
+		if data[p] == 112 {
+			goto st680
+		}
+		goto st388
+	st680:
+		if p++; p == pe {
+			goto _test_eof680
+		}
+	st_case_680:
+		goto tr706
+	st681:
+		if p++; p == pe {
+			goto _test_eof681
+		}
+	st_case_681:
+		goto tr677
+	st325:
+		if p++; p == pe {
+			goto _test_eof325
+		}
+	st_case_325:
+		switch data[p] {
+		case 4:
+			goto st681
+		case 6:
+			goto st681
+		case 8:
+			goto st681
+		}
+		goto st5
 	st326:
 		if p++; p == pe {
 			goto _test_eof326
 		}
 	st_case_326:
-		if data[p] == 69 {
+		switch data[p] {
+		case 73:
 			goto st327
+		case 97:
+			goto st333
 		}
 		goto st3
 	st327:
@@ -5829,7 +5895,7 @@ return Zip;
 			goto _test_eof327
 		}
 	st_case_327:
-		if data[p] == 76 {
+		if data[p] == 70 {
 			goto st328
 		}
 		goto st4
@@ -5839,63 +5905,51 @@ return Zip;
 		}
 	st_case_328:
 		if data[p] == 70 {
-			goto st659
+			goto st329
 		}
 		goto st5
-	st659:
-		if p++; p == pe {
-			goto _test_eof659
-		}
-	st_case_659:
-		goto tr682
 	st329:
 		if p++; p == pe {
 			goto _test_eof329
 		}
 	st_case_329:
-		if data[p] == 171 {
+		if data[p] == 87 {
 			goto st330
 		}
-		goto st3
+		goto st6
 	st330:
 		if p++; p == pe {
 			goto _test_eof330
 		}
 	st_case_330:
-		if data[p] == 238 {
+		if data[p] == 65 {
 			goto st331
 		}
-		goto st4
+		goto st7
 	st331:
 		if p++; p == pe {
 			goto _test_eof331
 		}
 	st_case_331:
-		if data[p] == 219 {
-			goto st660
+		if data[p] == 86 {
+			goto st332
 		}
-		goto st5
-	st660:
-		if p++; p == pe {
-			goto _test_eof660
-		}
-	st_case_660:
-		goto tr683
+		goto st8
 	st332:
 		if p++; p == pe {
 			goto _test_eof332
 		}
 	st_case_332:
-		if data[p] == 55 {
-			goto st333
+		if data[p] == 69 {
+			goto st622
 		}
-		goto st3
+		goto st9
 	st333:
 		if p++; p == pe {
 			goto _test_eof333
 		}
 	st_case_333:
-		if data[p] == 122 {
+		if data[p] == 114 {
 			goto st334
 		}
 		goto st4
@@ -5904,7 +5958,7 @@ return Zip;
 			goto _test_eof334
 		}
 	st_case_334:
-		if data[p] == 88 {
+		if data[p] == 33 {
 			goto st335
 		}
 		goto st5
@@ -5913,7 +5967,7 @@ return Zip;
 			goto _test_eof335
 		}
 	st_case_335:
-		if data[p] == 90 {
+		if data[p] == 26 {
 			goto st336
 		}
 		goto st6
@@ -5922,16 +5976,279 @@ return Zip;
 			goto _test_eof336
 		}
 	st_case_336:
-		if data[p] == 0 {
-			goto st661
+		if data[p] == 7 {
+			goto st337
 		}
 		goto st7
-	st661:
+	st337:
 		if p++; p == pe {
-			goto _test_eof661
+			goto _test_eof337
 		}
-	st_case_661:
-		goto tr684
+	st_case_337:
+		if data[p] <= 1 {
+			goto st682
+		}
+		goto st8
+	st682:
+		if p++; p == pe {
+			goto _test_eof682
+		}
+	st_case_682:
+		goto tr707
+	st338:
+		if p++; p == pe {
+			goto _test_eof338
+		}
+	st_case_338:
+		switch data[p] {
+		case 76:
+			goto st339
+		case 116:
+			goto st341
+		}
+		goto st3
+	st339:
+		if p++; p == pe {
+			goto _test_eof339
+		}
+	st_case_339:
+		if data[p] == 97 {
+			goto st340
+		}
+		goto st4
+	st340:
+		if p++; p == pe {
+			goto _test_eof340
+		}
+	st_case_340:
+		if data[p] == 67 {
+			goto st618
+		}
+		goto st5
+	st341:
+		if p++; p == pe {
+			goto _test_eof341
+		}
+	st_case_341:
+		if data[p] == 121 {
+			goto st342
+		}
+		goto st4
+	st342:
+		if p++; p == pe {
+			goto _test_eof342
+		}
+	st_case_342:
+		if data[p] == 112 {
+			goto st343
+		}
+		goto st5
+	st343:
+		if p++; p == pe {
+			goto _test_eof343
+		}
+	st_case_343:
+		if data[p] == 77 {
+			goto st344
+		}
+		goto st6
+	st344:
+		if p++; p == pe {
+			goto _test_eof344
+		}
+	st_case_344:
+		if data[p] == 52 {
+			goto st345
+		}
+		goto st7
+	st345:
+		if p++; p == pe {
+			goto _test_eof345
+		}
+	st_case_345:
+		if data[p] == 65 {
+			goto st621
+		}
+		goto st8
+	st346:
+		if p++; p == pe {
+			goto _test_eof346
+		}
+	st_case_346:
+		if data[p] == 92 {
+			goto st347
+		}
+		goto st3
+	st347:
+		if p++; p == pe {
+			goto _test_eof347
+		}
+	st_case_347:
+		if data[p] == 114 {
+			goto st348
+		}
+		goto st4
+	st348:
+		if p++; p == pe {
+			goto _test_eof348
+		}
+	st_case_348:
+		if data[p] == 116 {
+			goto st349
+		}
+		goto st5
+	st349:
+		if p++; p == pe {
+			goto _test_eof349
+		}
+	st_case_349:
+		if data[p] == 102 {
+			goto st683
+		}
+		goto st6
+	st683:
+		if p++; p == pe {
+			goto _test_eof683
+		}
+	st_case_683:
+		goto tr708
+	st350:
+		if p++; p == pe {
+			goto _test_eof350
+		}
+	st_case_350:
+		if data[p] == 69 {
+			goto st351
+		}
+		goto st3
+	st351:
+		if p++; p == pe {
+			goto _test_eof351
+		}
+	st_case_351:
+		if data[p] == 76 {
+			goto st352
+		}
+		goto st4
+	st352:
+		if p++; p == pe {
+			goto _test_eof352
+		}
+	st_case_352:
+		if data[p] == 70 {
+			goto st684
+		}
+		goto st5
+	st684:
+		if p++; p == pe {
+			goto _test_eof684
+		}
+	st_case_684:
+		goto tr709
+	st353:
+		if p++; p == pe {
+			goto _test_eof353
+		}
+	st_case_353:
+		if data[p] == 171 {
+			goto st354
+		}
+		goto st3
+	st354:
+		if p++; p == pe {
+			goto _test_eof354
+		}
+	st_case_354:
+		if data[p] == 238 {
+			goto st355
+		}
+		goto st4
+	st355:
+		if p++; p == pe {
+			goto _test_eof355
+		}
+	st_case_355:
+		if data[p] == 219 {
+			goto st685
+		}
+		goto st5
+	st685:
+		if p++; p == pe {
+			goto _test_eof685
+		}
+	st_case_685:
+		goto tr710
+	st356:
+		if p++; p == pe {
+			goto _test_eof356
+		}
+	st_case_356:
+		if data[p] == 55 {
+			goto st357
+		}
+		goto st3
+	st357:
+		if p++; p == pe {
+			goto _test_eof357
+		}
+	st_case_357:
+		if data[p] == 122 {
+			goto st358
+		}
+		goto st4
+	st358:
+		if p++; p == pe {
+			goto _test_eof358
+		}
+	st_case_358:
+		if data[p] == 88 {
+			goto st359
+		}
+		goto st5
+	st359:
+		if p++; p == pe {
+			goto _test_eof359
+		}
+	st_case_359:
+		if data[p] == 90 {
+			goto st360
+		}
+		goto st6
+	st360:
+		if p++; p == pe {
+			goto _test_eof360
+		}
+	st_case_360:
+		if data[p] == 0 {
+			goto st686
+		}
+		goto st7
+	st686:
+		if p++; p == pe {
+			goto _test_eof686
+		}
+	st_case_686:
+		goto tr711
+	st361:
+		if p++; p == pe {
+			goto _test_eof361
+		}
+	st_case_361:
+		switch data[p] {
+		case 241:
+			goto st687
+		case 249:
+			goto st687
+		case 251:
+			goto st687
+		}
+		goto st3
+	st687:
+		if p++; p == pe {
+			goto _test_eof687
+		}
+	st_case_687:
+		goto st624
 	st_out:
 	_test_eof2: cs = 2; goto _test_eof
 	_test_eof3: cs = 3; goto _test_eof
@@ -6193,39 +6510,14 @@ return Zip;
 	_test_eof259: cs = 259; goto _test_eof
 	_test_eof260: cs = 260; goto _test_eof
 	_test_eof261: cs = 261; goto _test_eof
-	_test_eof337: cs = 337; goto _test_eof
-	_test_eof338: cs = 338; goto _test_eof
+	_test_eof362: cs = 362; goto _test_eof
+	_test_eof363: cs = 363; goto _test_eof
 	_test_eof262: cs = 262; goto _test_eof
 	_test_eof263: cs = 263; goto _test_eof
 	_test_eof264: cs = 264; goto _test_eof
 	_test_eof265: cs = 265; goto _test_eof
 	_test_eof266: cs = 266; goto _test_eof
 	_test_eof267: cs = 267; goto _test_eof
-	_test_eof339: cs = 339; goto _test_eof
-	_test_eof340: cs = 340; goto _test_eof
-	_test_eof341: cs = 341; goto _test_eof
-	_test_eof342: cs = 342; goto _test_eof
-	_test_eof343: cs = 343; goto _test_eof
-	_test_eof344: cs = 344; goto _test_eof
-	_test_eof345: cs = 345; goto _test_eof
-	_test_eof346: cs = 346; goto _test_eof
-	_test_eof347: cs = 347; goto _test_eof
-	_test_eof348: cs = 348; goto _test_eof
-	_test_eof349: cs = 349; goto _test_eof
-	_test_eof350: cs = 350; goto _test_eof
-	_test_eof351: cs = 351; goto _test_eof
-	_test_eof352: cs = 352; goto _test_eof
-	_test_eof353: cs = 353; goto _test_eof
-	_test_eof354: cs = 354; goto _test_eof
-	_test_eof355: cs = 355; goto _test_eof
-	_test_eof356: cs = 356; goto _test_eof
-	_test_eof357: cs = 357; goto _test_eof
-	_test_eof358: cs = 358; goto _test_eof
-	_test_eof359: cs = 359; goto _test_eof
-	_test_eof360: cs = 360; goto _test_eof
-	_test_eof361: cs = 361; goto _test_eof
-	_test_eof362: cs = 362; goto _test_eof
-	_test_eof363: cs = 363; goto _test_eof
 	_test_eof364: cs = 364; goto _test_eof
 	_test_eof365: cs = 365; goto _test_eof
 	_test_eof366: cs = 366; goto _test_eof
@@ -6454,9 +6746,6 @@ return Zip;
 	_test_eof589: cs = 589; goto _test_eof
 	_test_eof590: cs = 590; goto _test_eof
 	_test_eof591: cs = 591; goto _test_eof
-	_test_eof268: cs = 268; goto _test_eof
-	_test_eof269: cs = 269; goto _test_eof
-	_test_eof270: cs = 270; goto _test_eof
 	_test_eof592: cs = 592; goto _test_eof
 	_test_eof593: cs = 593; goto _test_eof
 	_test_eof594: cs = 594; goto _test_eof
@@ -6465,12 +6754,6 @@ return Zip;
 	_test_eof597: cs = 597; goto _test_eof
 	_test_eof598: cs = 598; goto _test_eof
 	_test_eof599: cs = 599; goto _test_eof
-	_test_eof271: cs = 271; goto _test_eof
-	_test_eof272: cs = 272; goto _test_eof
-	_test_eof273: cs = 273; goto _test_eof
-	_test_eof274: cs = 274; goto _test_eof
-	_test_eof275: cs = 275; goto _test_eof
-	_test_eof276: cs = 276; goto _test_eof
 	_test_eof600: cs = 600; goto _test_eof
 	_test_eof601: cs = 601; goto _test_eof
 	_test_eof602: cs = 602; goto _test_eof
@@ -6486,56 +6769,27 @@ return Zip;
 	_test_eof612: cs = 612; goto _test_eof
 	_test_eof613: cs = 613; goto _test_eof
 	_test_eof614: cs = 614; goto _test_eof
-	_test_eof277: cs = 277; goto _test_eof
 	_test_eof615: cs = 615; goto _test_eof
-	_test_eof278: cs = 278; goto _test_eof
-	_test_eof279: cs = 279; goto _test_eof
 	_test_eof616: cs = 616; goto _test_eof
-	_test_eof280: cs = 280; goto _test_eof
-	_test_eof281: cs = 281; goto _test_eof
-	_test_eof282: cs = 282; goto _test_eof
-	_test_eof283: cs = 283; goto _test_eof
-	_test_eof284: cs = 284; goto _test_eof
+	_test_eof268: cs = 268; goto _test_eof
+	_test_eof269: cs = 269; goto _test_eof
+	_test_eof270: cs = 270; goto _test_eof
 	_test_eof617: cs = 617; goto _test_eof
-	_test_eof285: cs = 285; goto _test_eof
-	_test_eof286: cs = 286; goto _test_eof
 	_test_eof618: cs = 618; goto _test_eof
-	_test_eof287: cs = 287; goto _test_eof
-	_test_eof288: cs = 288; goto _test_eof
 	_test_eof619: cs = 619; goto _test_eof
-	_test_eof289: cs = 289; goto _test_eof
-	_test_eof290: cs = 290; goto _test_eof
 	_test_eof620: cs = 620; goto _test_eof
-	_test_eof291: cs = 291; goto _test_eof
-	_test_eof292: cs = 292; goto _test_eof
-	_test_eof293: cs = 293; goto _test_eof
 	_test_eof621: cs = 621; goto _test_eof
-	_test_eof294: cs = 294; goto _test_eof
-	_test_eof295: cs = 295; goto _test_eof
-	_test_eof296: cs = 296; goto _test_eof
-	_test_eof297: cs = 297; goto _test_eof
 	_test_eof622: cs = 622; goto _test_eof
-	_test_eof298: cs = 298; goto _test_eof
-	_test_eof299: cs = 299; goto _test_eof
-	_test_eof300: cs = 300; goto _test_eof
-	_test_eof301: cs = 301; goto _test_eof
 	_test_eof623: cs = 623; goto _test_eof
-	_test_eof302: cs = 302; goto _test_eof
-	_test_eof303: cs = 303; goto _test_eof
-	_test_eof304: cs = 304; goto _test_eof
-	_test_eof305: cs = 305; goto _test_eof
 	_test_eof624: cs = 624; goto _test_eof
-	_test_eof306: cs = 306; goto _test_eof
-	_test_eof307: cs = 307; goto _test_eof
-	_test_eof308: cs = 308; goto _test_eof
+	_test_eof271: cs = 271; goto _test_eof
+	_test_eof272: cs = 272; goto _test_eof
+	_test_eof273: cs = 273; goto _test_eof
+	_test_eof274: cs = 274; goto _test_eof
+	_test_eof275: cs = 275; goto _test_eof
+	_test_eof276: cs = 276; goto _test_eof
 	_test_eof625: cs = 625; goto _test_eof
-	_test_eof309: cs = 309; goto _test_eof
-	_test_eof310: cs = 310; goto _test_eof
-	_test_eof311: cs = 311; goto _test_eof
 	_test_eof626: cs = 626; goto _test_eof
-	_test_eof312: cs = 312; goto _test_eof
-	_test_eof313: cs = 313; goto _test_eof
-	_test_eof314: cs = 314; goto _test_eof
 	_test_eof627: cs = 627; goto _test_eof
 	_test_eof628: cs = 628; goto _test_eof
 	_test_eof629: cs = 629; goto _test_eof
@@ -6549,137 +6803,226 @@ return Zip;
 	_test_eof637: cs = 637; goto _test_eof
 	_test_eof638: cs = 638; goto _test_eof
 	_test_eof639: cs = 639; goto _test_eof
+	_test_eof277: cs = 277; goto _test_eof
+	_test_eof278: cs = 278; goto _test_eof
+	_test_eof279: cs = 279; goto _test_eof
+	_test_eof280: cs = 280; goto _test_eof
+	_test_eof281: cs = 281; goto _test_eof
+	_test_eof282: cs = 282; goto _test_eof
 	_test_eof640: cs = 640; goto _test_eof
+	_test_eof283: cs = 283; goto _test_eof
+	_test_eof284: cs = 284; goto _test_eof
 	_test_eof641: cs = 641; goto _test_eof
+	_test_eof285: cs = 285; goto _test_eof
+	_test_eof286: cs = 286; goto _test_eof
+	_test_eof287: cs = 287; goto _test_eof
+	_test_eof288: cs = 288; goto _test_eof
+	_test_eof289: cs = 289; goto _test_eof
 	_test_eof642: cs = 642; goto _test_eof
+	_test_eof290: cs = 290; goto _test_eof
+	_test_eof291: cs = 291; goto _test_eof
 	_test_eof643: cs = 643; goto _test_eof
+	_test_eof292: cs = 292; goto _test_eof
+	_test_eof293: cs = 293; goto _test_eof
 	_test_eof644: cs = 644; goto _test_eof
+	_test_eof294: cs = 294; goto _test_eof
+	_test_eof295: cs = 295; goto _test_eof
 	_test_eof645: cs = 645; goto _test_eof
+	_test_eof296: cs = 296; goto _test_eof
+	_test_eof297: cs = 297; goto _test_eof
+	_test_eof298: cs = 298; goto _test_eof
 	_test_eof646: cs = 646; goto _test_eof
+	_test_eof299: cs = 299; goto _test_eof
+	_test_eof300: cs = 300; goto _test_eof
+	_test_eof301: cs = 301; goto _test_eof
+	_test_eof302: cs = 302; goto _test_eof
+	_test_eof303: cs = 303; goto _test_eof
 	_test_eof647: cs = 647; goto _test_eof
+	_test_eof304: cs = 304; goto _test_eof
+	_test_eof305: cs = 305; goto _test_eof
+	_test_eof306: cs = 306; goto _test_eof
+	_test_eof307: cs = 307; goto _test_eof
 	_test_eof648: cs = 648; goto _test_eof
+	_test_eof308: cs = 308; goto _test_eof
+	_test_eof309: cs = 309; goto _test_eof
+	_test_eof310: cs = 310; goto _test_eof
+	_test_eof311: cs = 311; goto _test_eof
 	_test_eof649: cs = 649; goto _test_eof
+	_test_eof312: cs = 312; goto _test_eof
+	_test_eof313: cs = 313; goto _test_eof
+	_test_eof314: cs = 314; goto _test_eof
+	_test_eof315: cs = 315; goto _test_eof
+	_test_eof316: cs = 316; goto _test_eof
+	_test_eof317: cs = 317; goto _test_eof
+	_test_eof318: cs = 318; goto _test_eof
 	_test_eof650: cs = 650; goto _test_eof
+	_test_eof319: cs = 319; goto _test_eof
+	_test_eof320: cs = 320; goto _test_eof
+	_test_eof321: cs = 321; goto _test_eof
 	_test_eof651: cs = 651; goto _test_eof
+	_test_eof322: cs = 322; goto _test_eof
+	_test_eof323: cs = 323; goto _test_eof
+	_test_eof324: cs = 324; goto _test_eof
 	_test_eof652: cs = 652; goto _test_eof
 	_test_eof653: cs = 653; goto _test_eof
 	_test_eof654: cs = 654; goto _test_eof
 	_test_eof655: cs = 655; goto _test_eof
 	_test_eof656: cs = 656; goto _test_eof
-	_test_eof315: cs = 315; goto _test_eof
-	_test_eof316: cs = 316; goto _test_eof
-	_test_eof317: cs = 317; goto _test_eof
-	_test_eof318: cs = 318; goto _test_eof
-	_test_eof319: cs = 319; goto _test_eof
-	_test_eof320: cs = 320; goto _test_eof
-	_test_eof321: cs = 321; goto _test_eof
 	_test_eof657: cs = 657; goto _test_eof
-	_test_eof322: cs = 322; goto _test_eof
-	_test_eof323: cs = 323; goto _test_eof
-	_test_eof324: cs = 324; goto _test_eof
-	_test_eof325: cs = 325; goto _test_eof
 	_test_eof658: cs = 658; goto _test_eof
+	_test_eof659: cs = 659; goto _test_eof
+	_test_eof660: cs = 660; goto _test_eof
+	_test_eof661: cs = 661; goto _test_eof
+	_test_eof662: cs = 662; goto _test_eof
+	_test_eof663: cs = 663; goto _test_eof
+	_test_eof664: cs = 664; goto _test_eof
+	_test_eof665: cs = 665; goto _test_eof
+	_test_eof666: cs = 666; goto _test_eof
+	_test_eof667: cs = 667; goto _test_eof
+	_test_eof668: cs = 668; goto _test_eof
+	_test_eof669: cs = 669; goto _test_eof
+	_test_eof670: cs = 670; goto _test_eof
+	_test_eof671: cs = 671; goto _test_eof
+	_test_eof672: cs = 672; goto _test_eof
+	_test_eof673: cs = 673; goto _test_eof
+	_test_eof674: cs = 674; goto _test_eof
+	_test_eof675: cs = 675; goto _test_eof
+	_test_eof676: cs = 676; goto _test_eof
+	_test_eof677: cs = 677; goto _test_eof
+	_test_eof678: cs = 678; goto _test_eof
+	_test_eof679: cs = 679; goto _test_eof
+	_test_eof680: cs = 680; goto _test_eof
+	_test_eof681: cs = 681; goto _test_eof
+	_test_eof325: cs = 325; goto _test_eof
 	_test_eof326: cs = 326; goto _test_eof
 	_test_eof327: cs = 327; goto _test_eof
 	_test_eof328: cs = 328; goto _test_eof
-	_test_eof659: cs = 659; goto _test_eof
 	_test_eof329: cs = 329; goto _test_eof
 	_test_eof330: cs = 330; goto _test_eof
 	_test_eof331: cs = 331; goto _test_eof
-	_test_eof660: cs = 660; goto _test_eof
 	_test_eof332: cs = 332; goto _test_eof
 	_test_eof333: cs = 333; goto _test_eof
 	_test_eof334: cs = 334; goto _test_eof
 	_test_eof335: cs = 335; goto _test_eof
 	_test_eof336: cs = 336; goto _test_eof
-	_test_eof661: cs = 661; goto _test_eof
+	_test_eof337: cs = 337; goto _test_eof
+	_test_eof682: cs = 682; goto _test_eof
+	_test_eof338: cs = 338; goto _test_eof
+	_test_eof339: cs = 339; goto _test_eof
+	_test_eof340: cs = 340; goto _test_eof
+	_test_eof341: cs = 341; goto _test_eof
+	_test_eof342: cs = 342; goto _test_eof
+	_test_eof343: cs = 343; goto _test_eof
+	_test_eof344: cs = 344; goto _test_eof
+	_test_eof345: cs = 345; goto _test_eof
+	_test_eof346: cs = 346; goto _test_eof
+	_test_eof347: cs = 347; goto _test_eof
+	_test_eof348: cs = 348; goto _test_eof
+	_test_eof349: cs = 349; goto _test_eof
+	_test_eof683: cs = 683; goto _test_eof
+	_test_eof350: cs = 350; goto _test_eof
+	_test_eof351: cs = 351; goto _test_eof
+	_test_eof352: cs = 352; goto _test_eof
+	_test_eof684: cs = 684; goto _test_eof
+	_test_eof353: cs = 353; goto _test_eof
+	_test_eof354: cs = 354; goto _test_eof
+	_test_eof355: cs = 355; goto _test_eof
+	_test_eof685: cs = 685; goto _test_eof
+	_test_eof356: cs = 356; goto _test_eof
+	_test_eof357: cs = 357; goto _test_eof
+	_test_eof358: cs = 358; goto _test_eof
+	_test_eof359: cs = 359; goto _test_eof
+	_test_eof360: cs = 360; goto _test_eof
+	_test_eof686: cs = 686; goto _test_eof
+	_test_eof361: cs = 361; goto _test_eof
+	_test_eof687: cs = 687; goto _test_eof
 
 	_test_eof: {}
 	if p == eof {
 		switch cs {
-		case 655:
-//line magic.rl:43
- return Epub;
-		case 627, 656:
-//line magic.rl:44
-return Zip;
-		case 337:
-//line magic.rl:45
-return Tar;
-		case 657:
-//line magic.rl:46
-return Rar;
-		case 592:
-//line magic.rl:47
-return Gzip;
-		case 618:
-//line magic.rl:48
-return Bz2;
-		case 617:
-//line magic.rl:49
-return SevenZip;
-		case 616:
-//line magic.rl:50
-return Pdf
-		case 625:
-//line magic.rl:51
-return Exe
-		case 619:
-//line magic.rl:52
-return Swf
-		case 658:
+		case 680:
 //line magic.rl:53
-return Rtf
-		case 626:
+ return Epub;
+		case 652, 681:
 //line magic.rl:54
-return Nes
-		case 620:
+return Zip;
+		case 362:
 //line magic.rl:55
-return Crs
-		case 622:
+return Tar;
+		case 682:
 //line magic.rl:56
-return Cab
-		case 623:
+return Rar;
+		case 617:
 //line magic.rl:57
-return Eot
-		case 615:
+return Gzip;
+		case 643:
 //line magic.rl:58
-return Ps
-		case 661:
+return Bz2;
+		case 642:
 //line magic.rl:59
-return Xz
-		case 614:
+return SevenZip;
+		case 641:
 //line magic.rl:60
-return Deb
-		case 600:
+return Pdf
+		case 650:
 //line magic.rl:61
-return Ar
-		case 598:
+return Exe
+		case 644:
 //line magic.rl:62
-return Z
-		case 624:
+return Swf
+		case 683:
 //line magic.rl:63
-return Lz
-		case 660:
+return Rtf
+		case 651:
 //line magic.rl:64
-return Rpm
-		case 659:
+return Nes
+		case 645:
 //line magic.rl:65
-return Elf
-		case 621:
+return Crs
+		case 647:
 //line magic.rl:66
-return Dcm
-		case 339:
+return Cab
+		case 648:
+//line magic.rl:67
+return Eot
+		case 640:
 //line magic.rl:68
+return Ps
+		case 686:
+//line magic.rl:69
+return Xz
+		case 639:
+//line magic.rl:70
+return Deb
+		case 625:
+//line magic.rl:71
+return Ar
+		case 623:
+//line magic.rl:72
+return Z
+		case 649:
+//line magic.rl:73
+return Lz
+		case 685:
+//line magic.rl:74
+return Rpm
+		case 684:
+//line magic.rl:75
+return Elf
+		case 646:
+//line magic.rl:76
+return Dcm
+		case 364:
+//line magic.rl:79
 return Wasm
-//line magic.go:6676
+//line magic.go:7019
 		}
 	}
 
 	_out: {}
 	}
 
-//line magic.rl:81
+//line magic.rl:102
 
   return Unknown
 }

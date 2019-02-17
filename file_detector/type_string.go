@@ -4,9 +4,9 @@ package file_detector
 
 import "strconv"
 
-const _Type_name = "EpubZipTarRarGzipBz2SevenZipPdfExeSwfRtfNesCrsCabEotPsXzDebArZLzRpmElfDcmWasmUnknown"
+const _Type_name = "EpubZipTarRarGzipBz2SevenZipPdfExeSwfRtfNesCrsCabEotPsXzDebArZLzRpmElfDcmWasmMidiMp3M4aOggFlacWavAmrAacUnknown"
 
-var _Type_index = [...]uint8{0, 4, 7, 10, 13, 17, 20, 28, 31, 34, 37, 40, 43, 46, 49, 52, 54, 56, 59, 61, 62, 64, 67, 70, 73, 77, 84}
+var _Type_index = [...]uint8{0, 4, 7, 10, 13, 17, 20, 28, 31, 34, 37, 40, 43, 46, 49, 52, 54, 56, 59, 61, 62, 64, 67, 70, 73, 77, 81, 84, 87, 90, 94, 97, 100, 103, 110}
 
 func (i Type) String() string {
 	if i < 0 || i >= Type(len(_Type_index)-1) {

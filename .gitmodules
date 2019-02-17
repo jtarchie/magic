@@ -1,0 +1,3 @@
+[submodule "file_detector/filetype"]
+	path = file_detector/filetype
+	url = https://github.com/h2non/filetype
